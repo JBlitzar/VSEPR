@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="https://jblitzar.github.io/global.css" />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script
       id="MathJax-script"
@@ -23,48 +23,102 @@
         });
       } catch {}
     </script>
+    <script src="codes.js"></script>
   </head>
 
   <body class="container">
     <h1>VSEPR simulator</h1>
+    <br />
+    <h2>Jake Buckhouse</h2>
+    <br />
+    <select id="dropdown"></select>
+    <br />
+    <textarea id="textarea" rows="8" cols="100"></textarea>
+    <br />
+    <br />
+    <button id="send">Send to molecule viewer</button>
+    <br />
+    <br />
+    <a href="#" id="pubchem">View on PubChem</a>
 
     <br />
-    <h2>Usage</h2>
-    <p style="font-size: medium">
-      This website has two main parts: the viewer and the molecule code
-      selection page.<br />
-      You can view a molecule by first going to the code selection page,
-      selecting your desired molecule, and then clicking
-      <i>Send to molecule viewer</i>.<br />
-      That will open the molecule viewer page with the desired molecule shown.
-      You can copy the URL and share it and anyone who clicks it will see the
-      same molecule. You can easily access the code selection page again by
-      pressing `c`
-      <br />
-      Notable molecules:
-      <a
-        href="viewer.html?m=eyJhdG9tIjoiY2FyYm9uIiwiY29ubmVjdGlvbnMiOlsib3h5Z2VuIix7ImF0b20iOiJveHlnZW4iLCJjb25uZWN0aW9ucyI6WyJzb2RpdW1AIl19LHsiYXRvbSI6ImNhcmJvbiIsImNvbm5lY3Rpb25zIjpbImh5ZHJvZ2VuIiwiaHlkcm9nZW4iLHsiYXRvbSI6ImNhcmJvbiMwLjE5IiwiY29ubmVjdGlvbnMiOlsiaHlkcm9nZW4iLCJoeWRyb2dlbiIseyJhdG9tIjoiY2FyYm9uIzAuMTkiLCJjb25uZWN0aW9ucyI6WyJoeWRyb2dlbiIsImh5ZHJvZ2VuIix7ImF0b20iOiJjYXJib24jMC4xOSIsImNvbm5lY3Rpb25zIjpbImh5ZHJvZ2VuIiwiaHlkcm9nZW4iLHsiYXRvbSI6ImNhcmJvbiMwLjE5IiwiY29ubmVjdGlvbnMiOlsiaHlkcm9nZW4iLCJoeWRyb2dlbiIseyJhdG9tIjoiY2FyYm9uIzAuMTkiLCJjb25uZWN0aW9ucyI6WyJoeWRyb2dlbiIsImh5ZHJvZ2VuIix7ImF0b20iOiJjYXJib24jMC4xOSIsImNvbm5lY3Rpb25zIjpbImh5ZHJvZ2VuIiwiaHlkcm9nZW4iLHsiYXRvbSI6ImNhcmJvbiMwLjE5IiwiY29ubmVjdGlvbnMiOlsiaHlkcm9nZW4iLCJoeWRyb2dlbiIseyJhdG9tIjoiY2FyYm9uIzAuMTkiLCJjb25uZWN0aW9ucyI6WyJoeWRyb2dlbiIsImh5ZHJvZ2VuIix7ImF0b20iOiJjYXJib24jMC4xOSIsImNvbm5lY3Rpb25zIjpbImh5ZHJvZ2VuIiwiaHlkcm9nZW4iLHsiYXRvbSI6ImNhcmJvbiMwLjE5IiwiY29ubmVjdGlvbnMiOlsiaHlkcm9nZW4iLCJoeWRyb2dlbiIseyJhdG9tIjoiY2FyYm9uIzAuMTkiLCJjb25uZWN0aW9ucyI6WyJoeWRyb2dlbiIsImh5ZHJvZ2VuIix7ImF0b20iOiJjYXJib24jMC4xOSIsImNvbm5lY3Rpb25zIjpbImh5ZHJvZ2VuIiwiaHlkcm9nZW4iLHsiYXRvbSI6ImNhcmJvbiMwLjE5IiwiY29ubmVjdGlvbnMiOlsiaHlkcm9nZW4iLCJoeWRyb2dlbiIseyJhdG9tIjoiY2FyYm9uIzAuMTkiLCJjb25uZWN0aW9ucyI6WyJoeWRyb2dlbiIsImh5ZHJvZ2VuIix7ImF0b20iOiJjYXJib24jMC4xOSIsImNvbm5lY3Rpb25zIjpbImh5ZHJvZ2VuIiwiaHlkcm9nZW4iLHsiYXRvbSI6ImNhcmJvbiMwLjE5IiwiY29ubmVjdGlvbnMiOlsiaHlkcm9nZW4iLCJoeWRyb2dlbiIseyJhdG9tIjoiY2FyYm9uIiwiY29ubmVjdGlvbnMiOlsiaHlkcm9nZW4iLCJoeWRyb2dlbiIsImh5ZHJvZ2VuIl19XX1dfV19XX1dfV19XX1dfV19XX1dfV19XX1dfV19XX1dfV19"
-        >Soap</a
+    <p style="font-family: monospace">
+      <a href="https://github.com/JBlitzar/VSEPR" target="_blank"
+        >View Source Code</a
       >
-      <a
-        href="viewer.html?m=eyJhdG9tIjoib3h5Z2VuIiwiY29ubmVjdGlvbnMiOlsibG9uZSIsImxvbmUiLCJoeWRyb2dlbiIsImh5ZHJvZ2VuIl19"
-        >Water</a
-      >
-      <a
-        href="viewer.html?m=eyJhdG9tIjoiY2FyYm9uIiwiY29ubmVjdGlvbnMiOlsiaHlkcm9nZW4iLCJoeWRyb2dlbiIsImh5ZHJvZ2VuIiwiaHlkcm9nZW4iXX0="
-      >
-        Methane
-      </a>
-      <br />
-      <br />
-      <h4>
-        <button onclick="window.location = 'viewer.html'">Try it!</button>
-        <br />
-        <br />
-        To access the code selection page, click <a href="codes.html">here</a
-        ><br />
-      </h4>
-      
     </p>
+    <script>
+      // Get the dropdown and textarea elements
+      const dropdown = document.getElementById("dropdown");
+      const textarea = document.getElementById("textarea");
+
+      // Populate the dropdown with object keys
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          const option = document.createElement("option");
+          option.value = key;
+          let displaytext = key;
+          displaytext = displaytext
+            .replaceAll("0", "₀")
+            .replaceAll("1", "₁")
+            .replaceAll("2", "₂")
+            .replaceAll("3", "₃")
+            .replaceAll("4", "₄")
+            .replaceAll("5", "₅")
+            .replaceAll("6", "₆")
+            .replaceAll("7", "₇")
+            .replaceAll("8", "₈")
+            .replaceAll("9", "₉")
+            .replaceAll("_", "");
+          displaytext = displaytext
+            .replaceAll("º", "0")
+            .replaceAll("¡", "1")
+            .replaceAll("™", "2")
+            .replaceAll("£", "3")
+            .replaceAll("¢", "4")
+            .replaceAll("∞", "5")
+            .replaceAll("§", "6")
+            .replaceAll("¶", "7")
+            .replaceAll("•", "8")
+            .replaceAll("ª", "9");
+          option.text = displaytext;
+          dropdown.add(option);
+        }
+      }
+
+      // Set initial textarea content
+      textarea.innerText = JSON.stringify(data[dropdown.value]);
+      document.getElementById("pubchem").href =
+        "https://pubchem.ncbi.nlm.nih.gov/#query=" +
+        encodeURIComponent(dropdown.value);
+      try {
+        $(document.body).on("change", "#dropdown", function () {
+          textarea.innerText = JSON.stringify(data[this.value]);
+          var queryVal = this.value
+            .replaceAll("º", "0")
+            .replaceAll("¡", "1")
+            .replaceAll("™", "2")
+            .replaceAll("£", "3")
+            .replaceAll("¢", "4")
+            .replaceAll("∞", "5")
+            .replaceAll("§", "6")
+            .replaceAll("¶", "7")
+            .replaceAll("•", "8")
+            .replaceAll("ª", "9");
+
+          document.getElementById("pubchem").href =
+            "https://pubchem.ncbi.nlm.nih.gov/#query=" +
+            encodeURIComponent(queryVal);
+        });
+      } catch {}
+
+      // Add event listener to update textarea content on dropdown change
+      dropdown.addEventListener("change", function () {
+        textarea.innerText = JSON.stringify(data[this.value]);
+      });
+      document.getElementById("send").onclick = function () {
+        window.location = "viewer.html?m=" + btoa(textarea.innerHTML);
+      };
+    </script>
   </body>
 </html>
