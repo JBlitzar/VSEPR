@@ -132,13 +132,30 @@ const data = {
     atom: "carbon",
     connections: ["hydrogen", "hydrogen", "oxygen"],
   },
-  "Iodine heptafluoride (IF7)":{
-    atom:"iodine",
-    connections:["fluorine","fluorine","fluorine","fluorine","fluorine","fluorine","fluorine",]
+  "Iodine heptafluoride (IF7)": {
+    atom: "iodine",
+    connections: [
+      "fluorine",
+      "fluorine",
+      "fluorine",
+      "fluorine",
+      "fluorine",
+      "fluorine",
+      "fluorine",
+    ],
   },
-  "TaF8£-":{
-    atom:"tantalum",
-    connections:["fluorine","fluorine","fluorine","fluorine","fluorine","fluorine","fluorine","fluorine"]
+  "TaF8£-": {
+    atom: "tantalum",
+    connections: [
+      "fluorine",
+      "fluorine",
+      "fluorine",
+      "fluorine",
+      "fluorine",
+      "fluorine",
+      "fluorine",
+      "fluorine",
+    ],
   },
   "Carbon dioxide (CO2)": {
     atom: "carbon",
