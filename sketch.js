@@ -81,7 +81,7 @@ function keyPressed() {
     // currentMolecule = loadFromJSON(JSON.parse(code));
     // currentMolecule.distributeChildren()
   } else if (key == "c") {
-    window.location = "codes.html";
+    window.location = "index.html";
   } else if (key == "p") {
     window.RENDER_LONEPAIRS = !window.RENDER_LONEPAIRS;
   }
