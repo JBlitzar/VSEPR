@@ -286,7 +286,7 @@ const data = {
   "Isopropyl Alcohol (Isopropanol) (C3H8O)": {
     atom: "carbon",
     connections: [
-      { atom: "oxygen", connections: ["hydrogen"] },
+      { atom: "oxygen", connections: ["hydrogen", "lone", "lone"] },
       { atom: "carbon", connections: ["hydrogen", "hydrogen", "hydrogen"] },
       "hydrogen",
 
